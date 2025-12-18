@@ -5,6 +5,7 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import GitHubIcon from "./icons/GitHub.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import Curriculum from "./icons/Curriculum.astro"
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 
@@ -18,11 +19,11 @@ const t:tLang = useTranslations(lang);
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/me.png"
+      src="https://github.com/joanmat117.png"
       alt={t('personalImageAlt')}
     />
     <a
-      href="https://linkedin.com/in/acunarodrigo"
+      href="https://www.linkedin.com/in/joan-matias-dominguez-3652a1365/"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center"
@@ -49,17 +50,21 @@ const t:tLang = useTranslations(lang);
   >
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:rodrigoacuna.dev@gmail.com">
+    <SocialPill href="mailto:joanmat@proton.me">
       <MailIcon class="size-4" />
       {t('hero.mail')}
     </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/acunarodrigo/">
+    <SocialPill href="https://www.linkedin.com/in/joan-matias-dominguez-3652a1365/">
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="https://github.com/r4cun4">
+    <SocialPill href="https://github.com/joanmat117">
       <GitHubIcon class="size-4" />
       Github
+    </SocialPill>
+    <SocialPill href="https://github.com/joanmat117">
+      <Curriculum class="size-4" />
+      CV
     </SocialPill>
   </nav>
 

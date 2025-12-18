@@ -75,9 +75,9 @@ const PROJECTS: ProjectType[] = t('projects');
   {
     PROJECTS.map(({ image, imageAlt, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt={imageAlt} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+  <div class="w-full aspect-square overflow-hidden md:w-1/2">
+    <div class="relative size-full flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip ">
+      <img alt={imageAlt} class="object-contain object-top w-full h-full transition duration-500 md:group-hover:scale-95" loading="lazy" src={image} />
     </div>
   </div>
 
@@ -88,18 +88,17 @@ const PROJECTS: ProjectType[] = t('projects');
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-wrap mb-2 gap-x-2">
                 {tags.map((item) => {
-                  const tag:TagType = TAGS[item];
-                  if(tag) {
+                  const tag:TagType = TAGS[item.toLowerCase()];
                     return (
                       <li>
                         <span
-                          class={`flex gap-x-2 mt-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                          class={`flex gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || ''} py-1 px-2 `}
                         >
-                          <tag.icon class="size-4" />{tag.name}
+              {tag && <tag.icon class="size-4" />}
+              {tag?.name || item[0].toUpperCase() + item.slice(1)}
                         </span>
                       </li>
                     )
-                  }
                 })}
               </ul>
 
@@ -115,7 +114,7 @@ const PROJECTS: ProjectType[] = t('projects');
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              Demo
             </LinkButton>
           )}
         </footer>

@@ -1,117 +1,146 @@
 export const languages = {
     es: '🇪🇸',
     en: '🇺🇸',
-  };
-  
-  export const defaultLang = 'es';
-  
-  export const ui = {
+};
+
+export const defaultLang = 'es';
+
+export const ui = {
     es: {
-      'layout.title': 'Desarrollador Frontend',
-      'layout.description': 'Sitio web personal de Rodrigo Acuña. Aquí puedes encontrar información sobre mi experiencia, proyectos y detalles de contacto',
-      'nav.home':'Experiencia',
-      'nav.projects':'Proyectos',
-      'nav.about':'Sobre mí',
-      'nav.contact':'Contacto',
-      'hero.badge': 'Disponible para trabajar',
-      'hero.title': 'Buenas, soy Rodri',
-      'hero.bio': '<strong>Desarrollador Frontend</strong> me especializo en el ecosistema de Vue.js pero también manejo diversas tecnologías y herramientas.',
-      'hero.mail': 'Contáctame',
-      'hero.linkedin': 'LinkedIn',
-      'exp.title': 'Experiencia laboral',
-      'projects.title': 'Proyectos',
-      'about.title': 'Sobre mí',
-      'about.bio': `<p>¡Hola! Soy Rodrigo, un desarrollador Frontend con una sólida experiencia en tecnología y hotelería. Después de más de una década en la industria hotelera, ascendí al puesto de Gerente de Recepción en un hotel 5 estrellas, donde adquirí habilidades en servicio al cliente, gestión de equipos y toma de decisiones bajo presión.</p><p>Decidí dar un giro a mi carrera y sumergirme en el mundo del desarrollo web, donde me especializo en el ecosistema de Vue.js y me mantengo actualizado sobre las últimas tendencias. Mi enfoque en cada proyecto es crear soluciones estéticamente atractivas y altamente funcionales, combinando mis habilidades en comunicación y liderazgo.</p><p>He enfrentado y superado desafíos complejos, lo que me ha llevado a crecer tanto personal como profesionalmente. Fuera del trabajo, disfruto jugando al fútbol con amigos y pasando tiempo de calidad con mi familia, lo que me ayuda a mantener un equilibrio saludable entre el trabajo y la vida personal.</p><p>Estoy entusiasmado con la oportunidad de contribuir con mi experiencia y pasión al éxito de tu equipo o empresa. Espero con ansias la posibilidad de colaborar juntos en proyectos futuros.</p><p>¡Gracias por tomarte el tiempo de conocerme!</p>`,
-      'footer.rights': 'Casi todos los derechos reservados',
-      'personalImageAlt': 'Fotografía del propietario del sitio web',
-      exp: [
-        {
-          title: 'Desarrollador Frontend',
-          date: 'Mayo 2022 - Diciembre 2023',
-          company: 'Viseven',
-          description: 'He desarrollado aplicaciones web en diversas plataformas y colaborado en equipos multidisciplinarios. Además, he tenido el privilegio de liderar proyectos como Project Lead, supervisando la estimación del proyecto, las directrices de desarrollo y garantizando cumplimiento en los plazos de entrega.',
-          link: 'https://viseven.com/about-us',
-        },
-        {
-          title: 'Desarrollador Frontend Trainee',
-          date: 'Octubre 2021 - Mayo 2022',
-          company: 'Summa Solutions',
-          description: 'Desarrollé evolutivos, corregí bugs y diseñé nuevas características, enfrentando un fuerte desafío al ser mi primera experiencia en un equipo de desarrollo. Durante este proceso, aprendí a trabajar en un entorno ágil, colaborando eficazmente y adaptándome a cambios dinámicos.'
-        }
-      ],
-      projects: [
-        {
-          title: "Shopping list",
-          description: "Este proyecto personal tiene como objetivo agilizar el proceso de compras en el supermercado. Se ha implementado utilizando tecnologías avanzadas como Vue Router para gestionar las URLs, Vuex para el manejo del estado de la aplicación, y se ha seguido el patrón Options API. Además, está conectado a Firebase para una experiencia aún más fluida.",
-          link: "https://shopping-list-vue-app.netlify.app/#/",
-          github: "https://github.com/r4cun4/shopping-list",
-          image: "/projects/shopping-list.png",
-          imageAlt: "Captura de pantalla de la aplicación de lista de compras en un dispositivo móvil",
-          tags: ["vuejs", "javascript", "sass", "bootstrap", "firebase", "netlify"],
-        },
-        {
-          title: "Mi porfolio",
-          description: "Este sitio web representa mi experiencia, habilidades y proyectos destacados. Utilizando un template base creado por Midudev como punto de partida, lo he personalizado y enriquecido con funcionalidades de localización, permitiendo a los usuarios cambiar el idioma según sus preferencias.",
-          github: "https://github.com/r4cun4/my-portfolio",
-          image: "/projects/porfolio.png",
-          imageAlt: "Captura de pantalla del sitio web mostrado en un navegador web",
-          tags: ["astro", "javascript", "typescript", "tailwindcss", "netlify"],
-        },
-      ]
+        'layout.title': 'Desarrollador Frontend',
+        'layout.description': 'Sitio web personal de Joan Matías. Aquí puedes encontrar información sobre mi experiencia, proyectos y detalles de contacto',
+        'nav.home': 'Inicio',
+        'nav.projects': 'Proyectos',
+        'nav.about': 'Sobre mí',
+        'nav.contact': 'Contacto',
+        'hero.badge': 'Disponible para trabajar',
+        'hero.title': 'Hola, soy Joan',
+        'hero.bio': '<strong>Desarrollador Frontend</strong> apasionado por crear interfaces eficientes y responsivas con React, Next.js, TypeScript y Tailwind CSS. Poseo conocimientos sólidos en bases de datos (SQL, Supabase) y estoy motivado para resolver problemas de manera sostenible y escalable.',
+        'hero.mail': 'Contáctame',
+        'hero.linkedin': 'LinkedIn',
+        'exp.title': 'Experiencia',
+        'projects.title': 'Proyectos Destacados',
+        'about.title': 'Sobre mí',
+        'about.bio': `<p>¡Hola! Soy Joan Matías, un desarrollador Frontend con una pasión por crear experiencias digitales excepcionales. Mi enfoque principal es el desarrollo de interfaces de usuario eficientes, responsivas y accesibles utilizando tecnologías modernas como React, Next.js y TypeScript.</p>
+        <p>Poseo conocimientos sólidos en bases de datos (SQL, Supabase) y me motiva resolver problemas complejos de manera sostenible y escalable. Disfruto trabajando tanto en el frontend como en el backend, lo que me permite tener una visión completa del desarrollo web.</p>
+        <p>Creo en la importancia del código limpio, las buenas prácticas de desarrollo y el aprendizaje continuo. Cada proyecto es una oportunidad para crecer y mejorar mis habilidades, siempre buscando implementar las mejores soluciones técnicas.</p>
+        <p>Cuando no estoy programando, disfruto aprender sobre nuevas tecnologías, contribuir a proyectos de código abierto y mantenerme al día con las últimas tendencias del desarrollo web.</p>
+        <p>Estoy emocionado por la oportunidad de contribuir con mis habilidades y pasión al éxito de tu equipo o proyecto. ¡Espero poder colaborar juntos!</p>`,
+        'footer.rights': 'Todos los derechos reservados',
+        'personalImageAlt': 'Fotografía de Joan Matías',
+        /* exp: [
+            {
+                title: 'Desarrollador Frontend',
+                date: '2023 - Presente',
+                company: 'Proyectos Personales',
+                description: 'Desarrollo de aplicaciones web modernas utilizando React, Next.js, TypeScript y diversas tecnologías del ecosistema frontend. Implementación de mejores prácticas, optimización de rendimiento y creación de interfaces responsivas.',
+            }
+        ],*/
+        projects: [
+            {
+                title: 'Energía Ideal',
+                description: 'Un sitio web de noticias de alto rendimiento con diseño elegante, SEO perfecto y estructura multilingüe para alcance global.',
+                link: 'https://energiaideal.vercel.app/en',
+                github: 'https://github.com/joanmat117/energia-ideal',
+                image: '/energia-ideal.webp',
+                imageAlt: 'Captura de pantalla del sitio web Ideal Energy',
+                tags: ['nextjs', 'typeScript', 'react', 'supabase', 'tailwindCSS'],
+            },
+            {
+                title: 'Online Bible',
+                description: 'Una aplicación web moderna para leer la Biblia, construida con Next.js y React. Cuenta con una interfaz limpia y responsiva creada con Material UI, gestión de estado centralizada mediante Redux y una arquitectura escalable.',
+                link: 'https://online-bible.vercel.app/home',
+                github: 'https://github.com/joanmat117/online-bible',
+                image: '/online-bible.webp',
+                imageAlt: 'Captura de pantalla de la aplicación Online Bible',
+                tags: ['nextjs', 'TypeScript', 'React', 'Material UI', 'Redux'],
+            },
+            {
+                title: 'Community Website',
+                description: 'Un sitio web moderno para una comunidad, con un diseño temático y atractivo. Incluye un sistema completo de autenticación, un CMS interno para gestión de contenido y una interfaz de usuario responsiva y de alto rendimiento.',
+                github: '',
+                image: '/community-website.webp',
+                imageAlt: 'Captura de pantalla del sitio web de comunidad',
+                tags: ['Supabase', 'TypeScript', 'React', 'TailwindCSS', 'Shadcn', 'Zustand', 'Serverless Function'],
+            },
+            {
+                title: 'Chatbot Room',
+                description: 'Una plataforma moderna que ofrece chatbots especializados impulsados por IA. Los usuarios pueden elegir entre múltiples asistentes (finanzas, salud, académico, etc.) para obtener ayuda experta y contextual en diversos campos.',
+                link: 'https://chatbot-room.vercel.app',
+                github: 'https://github.com/joanmat117/chatbot-room',
+                image: '/chatbot-room.webp',
+                imageAlt: 'Captura de pantalla de la plataforma Chatbot Room',
+                tags: ['React', 'TailwindCSS', 'Typescript', 'Google Gemini'],
+            }
+        ]
     },
     en: {
-      'layout.title' : `Frontend Developer`,
-      'layout.description': 'Personal website of Rodrigo Acuña. Here you can find information about my experience, projects, and contact details.',
-      'nav.home':'Experience',
-      'nav.projects':'Projects',
-      'nav.about':'About me',
-      'nav.contact':'Contact',
-      'hero.badge': 'Open to work',
-      'hero.title': `Hey, I'm Rodri`,
-      'hero.bio': '<strong>Frontend developer</strong> specializing in the Vue.js ecosystem, but also proficient in various technologies and tools.',
-      'hero.mail': 'Contact me',
-      'hero.linkedin': 'LinkedIn',
-      'exp.title': 'Professional Experience',
-      'projects.title': 'Projects',
-      'about.title': 'About me',
-      'about.bio': "<p>Hello! I'm Rodrigo, a Frontend developer with a solid background in technology and hospitality. After over a decade in the hospitality industry, I rose to the position of Front Office Manager at a 5-star hotel, where I gained skills in customer service, team management, and decision-making under pressure.</p><p>I decided to pivot my career and dive into the world of web development, specializing in the Vue.js ecosystem and staying updated on the latest trends. My focus on every project is to create aesthetically appealing and highly functional solutions, combining my skills in communication and leadership.</p><p>I have faced and overcome complex challenges, leading to personal and professional growth. Outside of work, I enjoy playing soccer with friends and spending quality time with my family, which helps me maintain a healthy balance between work and personal life.</p><p>I am excited about the opportunity to contribute my experience and passion to your team or company's success. I look forward to the possibility of collaborating on future projects together.</p><p>Thank you for taking the time to get to know me!</p>",
-      'footer.rights': 'Almost all rights reserved',
-      'personalImageAlt': 'Photograph of the website owner',
-      exp: [
-        {
-          "title": "Frontend Developer",
-          "date": "May 2022 - December 2023",
-          "company": "Viseven",
-          "description": "I have developed web applications on various platforms and collaborated in multidisciplinary teams. Additionally, I have had the privilege of leading projects as Project Lead, overseeing project estimation, development guidelines, and ensuring compliance with delivery deadlines.",
-          "link": "https://viseven.com/about-us",
-          "linkLabel": "Learn more"
-        },
-        {
-          "title": "Frontend Developer Trainee",
-          "date": "October 2021 - May 2022",
-          "company": "Summa Solutions",
-          "description": "I developed enhancements, fixed bugs, and designed new features, facing a strong challenge as it was my first experience in a development team. During this process, I learned to work in an agile environment, collaborating effectively, and adapting to dynamic changes."
-        }
-      ],
-      projects: [
-        {
-          title: "Shopping list",
-          description: "This personal project aims to streamline the shopping process at the supermarket. It has been implemented using advanced technologies such as Vue Router to manage URLs, Vuex for handling application state, and follows the Options API pattern. Additionally, it is connected to Firebase for an even smoother experience.",
-          link: "https://shopping-list-vue-app.netlify.app/#/",
-          github: "https://github.com/r4cun4/shopping-list",
-          image: "/projects/shopping-list.png",
-          imageAlt: "Screenshot of the shopping list app on a mobile device",
-          tags: ["vuejs", "javascript", "sass", "bootstrap", "firebase", "netlify"]
-        },
-        {
-          title: "My Portfolio",
-          description: "This website represents my experience, skills, and notable projects. Using a base template created by Midudev as a starting point, I have customized and enriched it with localization features, allowing users to change the language according to their preferences.",
-          github: "https://github.com/r4cun4/my-portfolio",
-          image: "/projects/porfolio.png",
-          imageAlt: "Screenshot of the website displayed in a web browser",
-          tags: ["astro", "javascript", "typescript", "tailwindcss", "netlify"]
-        }
-      ],
+        'layout.title': 'Frontend Developer',
+        'layout.description': 'Personal website of Joan Matías. Here you can find information about my experience, projects, and contact details.',
+        'nav.home': 'Home',
+        'nav.projects': 'Projects',
+        'nav.about': 'About me',
+        'nav.contact': 'Contact',
+        'hero.badge': 'Open to work',
+        'hero.title': 'Hello, I\'m Joan',
+        'hero.bio': '<strong>Frontend Developer</strong> passionate about creating efficient and responsive UIs with React, Next.js, TypeScript, and Tailwind CSS. Possesses solid database knowledge (SQL, Supabase) and is motivated to solve problems sustainably and scalably.',
+        'hero.mail': 'Contact me',
+        'hero.linkedin': 'LinkedIn',
+        'exp.title': 'Experience',
+        'projects.title': 'Featured Projects',
+        'about.title': 'About me',
+        'about.bio': `<p>Hello! I'm Joan Matías, a Frontend Developer with a passion for creating exceptional digital experiences. My main focus is developing efficient, responsive, and accessible user interfaces using modern technologies like React, Next.js, and TypeScript.</p>
+        <p>I possess solid database knowledge (SQL, Supabase) and am motivated to solve complex problems in a sustainable and scalable way. I enjoy working on both frontend and backend, which gives me a comprehensive view of web development.</p>
+        <p>I believe in the importance of clean code, good development practices, and continuous learning. Each project is an opportunity to grow and improve my skills, always seeking to implement the best technical solutions.</p>
+        <p>When I'm not coding, I enjoy learning about new technologies, contributing to open-source projects, and keeping up with the latest web development trends.</p>
+        <p>I'm excited about the opportunity to contribute my skills and passion to your team or project's success. I look forward to collaborating together!</p>`,
+        'footer.rights': 'All rights reserved',
+        'personalImageAlt': 'Photograph of Joan Matías',
+        exp: [
+            {
+                title: 'Frontend Developer',
+                date: '2023 - Present',
+                company: 'Personal Projects',
+                description: 'Development of modern web applications using React, Next.js, TypeScript, and various frontend ecosystem technologies. Implementation of best practices, performance optimization, and creation of responsive interfaces.',
+            }
+        ],
+        projects: [
+            {
+                title: 'Ideal Energy',
+                description: 'A high-performance news website with an elegant design, perfect SEO, and a multilingual structure for global reach.',
+                link: 'https://energiaideal.vercel.app/en',
+                github: 'https://github.com/joanmat117/energia-ideal',
+                image: '/energia-ideal.webp',
+                imageAlt: 'Screenshot of Ideal Energy website',
+                tags: ['Nextjs', 'TypeScript', 'React', 'Supabase', 'TailwindCSS'],
+            },
+            {
+                title: 'Online Bible',
+                description: 'A modern web application for reading the Bible, built with Next.js and React. It features a clean, responsive interface crafted with Material UI, centralized state management via Redux, and a scalable architecture.',
+                link: 'https://online-bible.vercel.app/home',
+                github: 'https://github.com/joanmat117/online-bible',
+                image: '/online-bible.webp',
+                imageAlt: 'Screenshot of Online Bible application',
+                tags: ['Nextjs', 'TypeScript', 'React', 'Material UI', 'Redux'],
+            },
+            {
+                title: 'Community Website',
+                description: 'A modern website for a community, featuring a themed and engaging design. It includes a full authentication system, an internal CMS for content management, and a responsive, high-performance user interface.',
+                github: '',
+                image: '/community-website.webp',
+                imageAlt: 'Screenshot of community website',
+                tags: ['Supabase', 'TypeScript', 'React', 'TailwindCSS', 'Shadcn', 'Zustand', 'Serverless Function'],
+            },
+            {
+                title: 'Chatbot Room',
+                description: 'A modern platform offering specialized AI-powered chatbots. Users can choose from multiple assistants (finance, health, academic, etc.) to get expert, contextual help across various fields.',
+                link: 'https://chatbot-room.vercel.app',
+                github: 'https://github.com/joanmat117/chatbot-room',
+                image: '/chatbot-room.webp',
+                imageAlt: 'Screenshot of Chatbot Room platform',
+                tags: ['React', 'TailwindCSS', 'Typescript', 'Google Gemini'],
+            }
+        ],
     },
 
-  } as const;
+} as const;

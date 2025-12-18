@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import {type Experience as ExperienceType } from '@/types'
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+
+type tLang = (str: any) => any;
+
+const lang = getLangFromUrl(Astro.url)
+const t:tLang = useTranslations(lang);
+
+const EXP: ExperienceType[] = t('exp');
+---
+
+<Layout
+  title={t('layout.title')}
+  description={t('layout.description')}
+>
+  <main class="flex justify-center gap-10 px-4 md:px-10 flex-col w-full h-full">
+    <div class="first-column relative h-full ">
+      <SectionContainer class="py-16">
+        <Hero>
+        </slot>
+      </Hero>
+      </SectionContainer>
+    </div>
+    <div class="second-column space-y-24 ">
+      {EXP && <SectionContainer id="experiencia">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <Briefcase class="size-8" />
+          {t('exp.title')}
+        </h2>
+        <Experience />
+      </SectionContainer>}
+
+      <SectionContainer id="proyectos">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <CodeIcon class="size-7" />
+          {t('projects.title')}
+        </h2>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+          <ProfileCheck class="size-8" />
+          {t('about.title')}
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+  </div>
+  </main>
+</Layout>
