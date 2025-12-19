@@ -62,7 +62,7 @@ const t:tLang = useTranslations(lang);
       <GitHubIcon class="size-4" />
       Github
     </SocialPill>
-    <SocialPill href="https://github.com/joanmat117">
+    <SocialPill download={`CV_Joan_Matias_${lang.toUpperCase()}`} href={`/joan_cv_${lang || 'es'}`}>
       <Curriculum class="size-4" />
       CV
     </SocialPill>
