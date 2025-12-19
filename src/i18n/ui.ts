@@ -15,17 +15,14 @@ export const ui = {
         'nav.contact': 'Contacto',
         'hero.badge': 'Disponible para trabajar',
         'hero.title': 'Hola, soy Joan',
-        'hero.bio': '<strong>Desarrollador Frontend</strong> apasionado por crear interfaces eficientes y responsivas con React, Next.js, TypeScript y Tailwind CSS. Poseo conocimientos sólidos en bases de datos (SQL, Supabase) y estoy motivado para resolver problemas de manera sostenible y escalable.',
+        'hero.bio': '+1.5 años de experiencia aportando a la web. <strong>Desarrollador Frontend</strong> 🇨🇺 especializado en crear experiencias que no solo funcionen, sino que <strong>se sientan increíbles.</strong>',
         'hero.mail': 'Contáctame',
         'hero.linkedin': 'LinkedIn',
         'exp.title': 'Experiencia',
         'projects.title': 'Proyectos Destacados',
         'about.title': 'Sobre mí',
-        'about.bio': `<p>¡Hola! Soy Joan Matías, un desarrollador Frontend con una pasión por crear experiencias digitales excepcionales. Mi enfoque principal es el desarrollo de interfaces de usuario eficientes, responsivas y accesibles utilizando tecnologías modernas como React, Next.js y TypeScript.</p>
-        <p>Poseo conocimientos sólidos en bases de datos (SQL, Supabase) y me motiva resolver problemas complejos de manera sostenible y escalable. Disfruto trabajando tanto en el frontend como en el backend, lo que me permite tener una visión completa del desarrollo web.</p>
-        <p>Creo en la importancia del código limpio, las buenas prácticas de desarrollo y el aprendizaje continuo. Cada proyecto es una oportunidad para crecer y mejorar mis habilidades, siempre buscando implementar las mejores soluciones técnicas.</p>
-        <p>Cuando no estoy programando, disfruto aprender sobre nuevas tecnologías, contribuir a proyectos de código abierto y mantenerme al día con las últimas tendencias del desarrollo web.</p>
-        <p>Estoy emocionado por la oportunidad de contribuir con mis habilidades y pasión al éxito de tu equipo o proyecto. ¡Espero poder colaborar juntos!</p>`,
+        'about.bio': `<p>Mi primer "Hola mundo" fue el LED de un Arduino parpadeando. Ahí aprendí que lo importante no es solo que algo funcione, sino que sea útil y fácil de usar para los demás.</p><p>Creo, como Steve Jobs, que "el diseño no es solo cómo se ve, sino cómo funciona". Por eso, me apasiona construir interfaces donde la tecnología se note en los resultados: en lo rápido que carga, en lo fácil que es navegar y en lo simple que es entenderlo.</p><p>Mi objetivo es que la persona al otro lado de la pantalla no tenga que pensar en cómo usarlo, sino solo en disfrutar de lo que hace.</p>
+        `,
         'footer.rights': 'Todos los derechos reservados',
         'personalImageAlt': 'Fotografía de Joan Matías',
         /* exp: [
