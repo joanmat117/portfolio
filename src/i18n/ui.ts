@@ -96,14 +96,14 @@ export const ui = {
         <p>I'm excited about the opportunity to contribute my skills and passion to your team or project's success. I look forward to collaborating together!</p>`,
         'footer.rights': 'All rights reserved',
         'personalImageAlt': 'Photograph of Joan Matías',
-        exp: [
+        /* exp: [
             {
                 title: 'Frontend Developer',
                 date: '2023 - Present',
                 company: 'Personal Projects',
                 description: 'Development of modern web applications using React, Next.js, TypeScript, and various frontend ecosystem technologies. Implementation of best practices, performance optimization, and creation of responsive interfaces.',
             }
-        ],
+        ],*/
         projects: [
             {
                 title: 'Ideal Energy',

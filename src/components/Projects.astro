@@ -11,6 +11,10 @@ import Firebase from "./icons/Firebase.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Nextjs from "./icons/Nextjs.astro"
+import React from "./icons/React.astro"
+import Supabase from "./icons/Supabase.astro"
+import Redux from "./icons/Redux.astro"
 import type { ProjectType, TagType, TagsType } from '@/types'
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
@@ -65,7 +69,27 @@ const TAGS: TagsType = {
     name: 'Firebase',
     class: 'bg-[#1A73E8] text-white',
     icon: Firebase,
+    },
+  nextjs: {
+  name: 'Nextjs',
+  class: 'bg-[#000] text-white',
+  icon: Nextjs
   },
+  react: {
+    name:"React",
+    class: 'bg-[#0070e7] text-white',
+    icon: React
+    },
+    supabase: {
+    name:"Supabase",
+    class: 'bg-[#00c211] text-black',
+    icon:Supabase
+    },
+    redux:{
+    name:"Redux",
+    class: 'bg-[#e601ed] text-white',
+    icon:Redux,
+    }
 };
 
 const PROJECTS: ProjectType[] = t('projects');
@@ -92,7 +116,7 @@ const PROJECTS: ProjectType[] = t('projects');
                     return (
                       <li>
                         <span
-                          class={`flex gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || ''} py-1 px-2 `}
+                          class={`flex items-center gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || ''} py-1 px-2 `}
                         >
               {tag && <tag.icon class="size-4" />}
               {tag?.name || item[0].toUpperCase() + item.slice(1)}
