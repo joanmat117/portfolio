@@ -80,17 +80,17 @@ export const ui = {
         'nav.contact': 'Contact',
         'hero.badge': 'Open to work',
         'hero.title': 'Hello, I\'m Joan',
-        'hero.bio': '<strong>Frontend Developer</strong> passionate about creating efficient and responsive UIs with React, Next.js, TypeScript, and Tailwind CSS. Possesses solid database knowledge (SQL, Supabase) and is motivated to solve problems sustainably and scalably.',
+        'hero.bio': '+1.5 years of experience contributing to the web. <strong>Frontend Developer</strong> 🇨🇺 specialized in creating experiences that not only work but <strong>feel incredible.</strong>',
         'hero.mail': 'Contact me',
         'hero.linkedin': 'LinkedIn',
         'exp.title': 'Experience',
         'projects.title': 'Featured Projects',
         'about.title': 'About me',
-        'about.bio': `<p>Hello! I'm Joan Matías, a Frontend Developer with a passion for creating exceptional digital experiences. My main focus is developing efficient, responsive, and accessible user interfaces using modern technologies like React, Next.js, and TypeScript.</p>
-        <p>I possess solid database knowledge (SQL, Supabase) and am motivated to solve complex problems in a sustainable and scalable way. I enjoy working on both frontend and backend, which gives me a comprehensive view of web development.</p>
-        <p>I believe in the importance of clean code, good development practices, and continuous learning. Each project is an opportunity to grow and improve my skills, always seeking to implement the best technical solutions.</p>
-        <p>When I'm not coding, I enjoy learning about new technologies, contributing to open-source projects, and keeping up with the latest web development trends.</p>
-        <p>I'm excited about the opportunity to contribute my skills and passion to your team or project's success. I look forward to collaborating together!</p>`,
+        'about.bio': `<p>My first "Hello world" was an Arduino LED blinking. That's where I learned that what matters is not just that something works, but that it is useful and easy for others to use.</p>
+
+<p>I believe, like Steve Jobs, that "design is not just what it looks like, it's how it works." That’s why I’m passionate about building interfaces where technology is noticeable in the results: in how fast it loads, how easy it is to navigate, and how simple it is to understand.</p>
+
+<p>My goal is for the person on the other side of the screen not to have to think about how to use it, but simply to enjoy what it does.</p>`,
         'footer.rights': 'All rights reserved',
         'personalImageAlt': 'Photograph of Joan Matías',
         /* exp: [
