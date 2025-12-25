@@ -1,0 +1,351 @@
+{
+  "basics": {
+    "url": {
+      "href": "https://joanmat-portfolio.vercel.app",
+      "label": "Portfolio"
+    },
+    "name": "Joan Matias Dominguez",
+    "email": "joanmat@proton.me",
+    "phone": "+53 56876678",
+    "picture": {
+      "url": "https://avatars.githubusercontent.com/u/229201137?v=4",
+      "size": 64,
+      "effects": {
+        "border": false,
+        "hidden": false,
+        "grayscale": false
+      },
+      "aspectRatio": 1,
+      "borderRadius": 0
+    },
+    "headline": "Desarrollador Frontend",
+    "location": "",
+    "customFields": []
+  },
+  "metadata": {
+    "css": {
+      "value": "img[alt=\"github\"] {\nbackground-color:white;\nborder-radius:100px;\n}",
+      "visible": true
+    },
+    "page": {
+      "format": "a4",
+      "margin": 18,
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "notes": "",
+    "theme": {
+      "text": "#fafbff",
+      "primary": "#00ff23",
+      "background": "#1a1a1d"
+    },
+    "layout": [
+      [
+        [
+          "profiles",
+          "summary",
+          "experience",
+          "skills",
+          "education",
+          "projects",
+          "volunteer",
+          "references"
+        ],
+        [
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "languages"
+        ]
+      ]
+    ],
+    "template": "onyx",
+    "typography": {
+      "font": {
+        "size": 14,
+        "family": "Open Sans",
+        "subset": "latin",
+        "variants": [
+          "regular",
+          "700",
+          "italic"
+        ]
+      },
+      "hideIcons": false,
+      "lineHeight": 1.5,
+      "underlineLinks": true
+    }
+  },
+  "sections": {
+    "awards": {
+      "id": "awards",
+      "name": "Awards",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "custom": {},
+    "skills": {
+      "id": "skills",
+      "name": "Skills",
+      "items": [
+        {
+          "id": "udxf7wptafa38qdmwsdrcpyl",
+          "visible": true,
+          "name": "Frontend Development",
+          "description": "",
+          "level": 0,
+          "keywords": [
+            "React",
+            "Next.js",
+            "Astro",
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Tailwind CSS"
+          ]
+        },
+        {
+          "id": "zryev91b8lzg5lr98nqlfigw",
+          "visible": true,
+          "name": "Backend & Tools",
+          "description": "",
+          "level": 0,
+          "keywords": [
+            "Supabase",
+            "Vitest",
+            "Zod",
+            "SQL"
+          ]
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "summary": {
+      "id": "summary",
+      "name": "Summary",
+      "columns": 1,
+      "content": "<p>Desarrollador Frontend especializado en <strong>React, Next.js y TypeScript</strong>. Experiencia en desarrollo de interfaces responsivas con <strong>TailwindCSS</strong> e integración con Supabase. Conocimientos sólidos en testing con<strong> Vitest</strong> para garantizar código robusto y confiable. Enfoque en código mantenible, escalable y centrado en la experiencia del usuario.</p>",
+      "visible": true,
+      "separateLinks": true
+    },
+    "profiles": {
+      "id": "profiles",
+      "name": "Profiles",
+      "items": [
+        {
+          "id": "poddk3rpuo7hihga3pr1onga",
+          "visible": true,
+          "network": "LinkedIn",
+          "username": "joan-matias-dominguez",
+          "icon": "linkedin",
+          "url": {
+            "label": "",
+            "href": "https://www.linkedin.com/in/joan-matias-dominguez-3652a1365"
+          }
+        },
+        {
+          "id": "usukt1pcrsiecsy4and0875f",
+          "visible": true,
+          "network": "GitHub",
+          "username": "joanmat117",
+          "icon": "github",
+          "url": {
+            "label": "github.com/joanmat117",
+            "href": "https://github.com/joanmat117"
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "projects": {
+      "id": "projects",
+      "name": "Projects",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "education": {
+      "id": "education",
+      "name": "Education",
+      "items": [
+        {
+          "id": "cs443cwtv92ei0ivdu1a9atp",
+          "visible": true,
+          "institution": "IPU José Luis Dubrocq",
+          "studyType": "Educación Preuniversitaria",
+          "area": "Bachiller",
+          "score": "",
+          "date": "2020 - 2023",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "interests": {
+      "id": "interests",
+      "name": "Interests",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "languages": {
+      "id": "languages",
+      "name": "Languages",
+      "items": [
+        {
+          "id": "aghkdjnycfzhwk7gz0hyeam1",
+          "visible": true,
+          "name": "Español",
+          "description": "Nativo",
+          "level": 0
+        },
+        {
+          "id": "eyvyucrmsmc6zk2tcyctrbdd",
+          "visible": true,
+          "name": "Inglés",
+          "description": "Básico",
+          "level": 0
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "volunteer": {
+      "id": "volunteer",
+      "name": "Volunteering",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "experience": {
+      "id": "experience",
+      "name": "Experience",
+      "items": [
+        {
+          "id": "fjw1e6ec4qy8r9o9w7kghkpz",
+          "visible": true,
+          "company": "Chatbot Room - Plataforma Multibot de IA",
+          "position": "Desarrollador Frontend",
+          "location": "",
+          "date": "2025-03 - 2025-05",
+          "summary": "<ul><li><p>Construí una aplicación interactiva en React y TypeScript que integra la API de Gemini, ofreciendo múltiples chatbots especializados con interfaz responsiva (Tailwind CSS). </p></li><li><p>Aseguré la fiabilidad del código mediante la implementación de pruebas unitarias con Vitest para componentes clave y lógica de negocio. </p></li><li><p>Desarrollé una guía interactiva de Prompt Engineering, enseñando a los usuarios técnicas prácticas para obtener respuestas más precisas de la IA.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "t21matr1wzemre5987hq9y3b",
+          "visible": true,
+          "company": "Online Bible - Plataforma de Lectura Bíblica",
+          "position": "Desarrollador Frontend",
+          "location": "",
+          "date": "2024-11 - 2025-01",
+          "summary": "<ul><li><p>Desarrollé una aplicación web de alto rendimiento con Next.js, utilizando renderizado del lado del servidor para lograr una <em>navegación ultrarrápida.</em> </p></li><li><p>Implementé una Screaming Architecture organizada y Redux Toolkit para una gestión de estado eficiente del<strong> </strong><em>progreso de usuario, favoritos y notas. </em></p></li><li><p>Creé una interfaz responsiva con Material-UI que incluye modo oscuro, sistema de favoritos y notas por versículo, optimizada para todos los dispositivos.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "p0sqe5a47gd2zm5qdmyoi02c",
+          "visible": true,
+          "company": "Portal de Noticias del Sector Eléctrico",
+          "position": "Desarrollador Frontend & Backend",
+          "location": "",
+          "date": "2024-06 - 2024-09",
+          "summary": "<ul><li><p>Logré una puntuación perfecta de 100 en SEO y 96 en Accesibilidad (PageSpeed Insights), garantizando una base técnica óptima y una experiencia de usuario superior. </p></li><li><p>Desarrollé un backend completo con Supabase, incluyendo un <em>CMS personalizado para gestión de contenidos</em> y un sistema avanzado de optimización de imágenes. </p></li><li><p>Implementé una arquitectura multilingüe con traducción automática al publicar, ampliando el alcance del contenido a audiencias en <em>inglés y español.</em></p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "v8kktcwdp5fsdkjthrnyunt7",
+          "visible": true,
+          "company": "Sitio Web Comunitario",
+          "position": "Desarrollador Fullstack",
+          "location": "",
+          "date": "2024-03 - 2024-09",
+          "summary": "<ul><li><p>Lideré el diseño y desarrollo frontend con React, TypeScript y Tailwind CSS, entregando una interfaz moderna y <em>consistente con el branding</em>. </p></li><li><p>Implementé toda la capa backend con Supabase (BD, Auth, Storage), agilizando el desarrollo y asegurando la escalabilidad. </p></li><li><p>Entregué un <em>dashboard/CMS</em> interno con validación robusta (Zod + React Hook Form), permitiendo al cliente gestionar contenido de forma autónoma.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "references": {
+      "id": "references",
+      "name": "References",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "publications": {
+      "id": "publications",
+      "name": "Publications",
+      "items": [],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    },
+    "certifications": {
+      "id": "certifications",
+      "name": "Certifications",
+      "items": [
+        {
+          "id": "ebdd58m7f6zq590twymsnjhh",
+          "url": {
+            "href": "",
+            "label": ""
+          },
+          "date": "2024",
+          "name": "Curso Profesional de React",
+          "issuer": "codigofacilito",
+          "summary": "",
+          "visible": true
+        },
+        {
+          "id": "mv268zjp0061j5zg8tfg2f4l",
+          "url": {
+            "href": "",
+            "label": ""
+          },
+          "date": "2024",
+          "name": "Curso Profesional de Typescript",
+          "issuer": "codigofacilito",
+          "summary": "",
+          "visible": true
+        }
+      ],
+      "columns": 1,
+      "visible": true,
+      "separateLinks": true
+    }
+  }
+}
