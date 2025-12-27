@@ -35,7 +35,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-b-2xl text-gray-600 dark:text-gray-200 justify-center items-center"
   >
   {
     navItems.map((link) => (
@@ -52,9 +52,7 @@ const navItems = [
       inline-flex
       items-center
       justify-center
-      border
-      border-[#42b883]
-      rounded-full
+      rounded-2xl
       gap-2 px-2 py-1"
     >
       <ThemeToggle />
@@ -114,7 +112,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 text-slate-100 bg-black ring-white/10;
     }
   }
 </style>

@@ -7,7 +7,7 @@ const lang = getLangFromUrl(Astro.url)
 const t:tLang = useTranslations(lang);
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row lg:bg-gray-100 lg:dark:bg-[#1A1A1A] p-4 lg:rounded-[25px] lg:shadow-lg">
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row p-4 ">
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-[#42b883] dark:[&>p>strong]:text-[#42b883] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
     set:html={t('about.bio')}

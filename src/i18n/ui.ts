@@ -35,6 +35,15 @@ export const ui = {
         ],*/
         projects: [
             {
+              "title": "Torneo EA FC 24 Madrid",
+              "description": "Landing page moderna para un torneo de gaming, desarrollada con Astro para máximo rendimiento y diseño responsivo. Internacionalización completa en tres idiomas .",
+              "link": "https://torneoeafc24madrid.vercel.app/es",
+              "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
+              "image": "/torneo-ea-fc-24-landing.webp",
+              "imageAlt": "Captura de pantalla del sitio web del Torneo EA FC 24 Madrid",
+              "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
+            }, 
+            {
                 title: 'Energía Ideal',
                 description: 'Un sitio web de noticias de alto rendimiento con diseño elegante, SEO perfecto y estructura multilingüe para alcance global.',
                 link: 'https://energiaideal.vercel.app/en',
@@ -102,6 +111,15 @@ export const ui = {
             }
         ],*/
         projects: [
+            {
+            "title": "EA FC 24 Madrid Tournament",
+            "description": "Modern landing page for a gaming tournament, developed with Astro for maximum performance and responsive design. Complete internationalization in three languages.",
+            "link": "https://torneoeafc24madrid.vercel.app/es",
+            "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
+            "image": "/torneo-ea-fc-24-landing.webp",
+            "imageAlt": "Screenshot of the EA FC 24 Madrid Tournament website",
+            "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
+            },
             {
                 title: 'Ideal Energy',
                 description: 'A high-performance news website with an elegant design, perfect SEO, and a multilingual structure for global reach.',

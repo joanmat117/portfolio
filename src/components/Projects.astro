@@ -1,7 +1,7 @@
 ---
 import GitHub from "./icons/GitHub.astro"
 import JavaScript from "./icons/JavaScript.astro"
-import AstroIcon from "./icons/Code.astro"
+import AstroIcon from "./icons/Astro.astro"
 import TypeScriptIcon from "./icons/TypeScriptIcon.astro"
 import Netlify from "./icons/Netlify.astro"
 import Vue from "./icons/Vue.astro"
@@ -37,7 +37,7 @@ const TAGS: TagsType = {
   },
   astro: {
     name: 'Astro',
-    class: 'bg-[#000] text-white dark:bg-white dark:text-[#000]',
+    class: 'bg-white text-[#000]',
     icon: AstroIcon,
   },
   typescript: {
@@ -95,7 +95,7 @@ const TAGS: TagsType = {
 const PROJECTS: ProjectType[] = t('projects');
 ---
 
-<div class="flex flex-col gap-y-16 lg:bg-gray-100 lg:dark:bg-[#1A1A1A] p-4 lg:rounded-[25px] lg:shadow-lg">
+<div class="flex flex-col gap-y-16  p-4 ">
   {
     PROJECTS.map(({ image, imageAlt, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
