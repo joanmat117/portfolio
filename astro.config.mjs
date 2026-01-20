@@ -9,6 +9,9 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   output:'server',
+  experimental: {
+    env: false
+  },
   site: 'https://joanmat-portfolio.vercel.app/',
 
   i18n: {
