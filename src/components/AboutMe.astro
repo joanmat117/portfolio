@@ -16,7 +16,18 @@ const bioHtml = personalInfo?.largeAboutMe
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row p-4">
   {bioHtml && <div
-    class="[&>p]:mb-4 [&>p>strong]:text-[#42b883] dark:[&>p>strong]:text-[#42b883] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="
+    [&>p]:mb-4  text-pretty order-2 md:order-1
+    text-pretty
+      
+    [&>p>strong]:text-[#42b883] 
+    [&>p>strong]:font-semibold 
+    [&>p>strong]:underline 
+    [&>p>strong]:decoration-2 
+    [&>p>strong]:underline-offset-4
+    [&>p>strong]:decoration-[#42b883]/40
+    dark:[&>p>strong]:text-[#42b883]
+    "
     set:html={bioHtml}
   >
   </div>}
