@@ -1,16 +1,16 @@
 ---
-import { portfolioService } from "@/services/PortfolioService"
+import { portfolioService, type PersonalInfo } from "@/services/PortfolioService"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 // SSR: Obtenemos solo la información de redes sociales y el nombre
-const personalInfo = await portfolioService.getPersonalInfo(lang as 'es' | 'en')
-const { social, name } = personalInfo
+const personalInfo:PersonalInfo|null = await portfolioService.getPersonalInfo(lang as 'es' | 'en')
+const { social, name } = personalInfo || {}
 
 // Extraemos el primer nombre para el enlace (opcional)
-const firstName = name.split(' ')[0]
+const firstName = name?.split(' ')[0]
 const currentYear = new Date().getFullYear()
 ---
 
@@ -22,27 +22,27 @@ const currentYear = new Date().getFullYear()
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">
       © {currentYear}
-      <a 
+      {social?.linkedin && firstName && <a 
         href={social.linkedin} 
         target="_blank" 
         rel="noopener noreferrer" 
         class="hover:underline"
       >
         {firstName}
-      </a>.
+      </a>}
       {t('footer.rights')}
     </span>
 
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0">
       <li>
-        <a href={`mailto:${social.email}`} class="hover:underline me-4 md:me-6">
+        {social?.email && <a href={`mailto:${social.email}`} class="hover:underline me-4 md:me-6">
           {lang === 'es' ? 'Contacto' : 'Contact'}
-        </a>
+        </a>}
       </li>
       <li>
-        <a href={social.github} target="_blank" class="hover:underline">
+        {social?.github && <a href={social.github} target="_blank" class="hover:underline">
           GitHub
-        </a>
+        </a>}
       </li>
     </ul>
   </div>
