@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
 import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
@@ -9,39 +8,45 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
-import {type Experience as ExperienceType } from '@/types'
+
+// Importamos el servicio
+import { portfolioService } from "@/services/PortfolioService"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 
-type tLang = (str: any) => any;
-
 const lang = getLangFromUrl(Astro.url)
-const t:tLang = useTranslations(lang);
+const t = useTranslations(lang);
 
-const EXP: ExperienceType[] = t('exp');
+// SSR: Obtenemos la experiencia laboral (Job Experience)
+// Si el archivo no existe o está vacío, el servicio devuelve []
+const JOBS = await portfolioService.getJobExperience(lang as 'es' | 'en');
 ---
 
 <Layout
-  title={t('layout.title')}
-  description={t('layout.description')}
+  title={t('layout.title') as string}
+  description={t('layout.description') as string}
 >
   <main class="flex justify-center gap-10 px-4 md:px-10 flex-col w-full h-full">
     <div class="first-column relative h-full ">
       <SectionContainer class="py-16">
-        <Hero>
-        </slot>
-      </Hero>
+        <Hero />
       </SectionContainer>
     </div>
+
     <div class="second-column space-y-24 ">
-      {EXP && <SectionContainer id="experiencia">
-        <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-        >
-          <Briefcase class="size-8" />
-          {t('exp.title')}
-        </h2>
-        <Experience />
-      </SectionContainer>}
+      {/* Validación: Si JOBS tiene elementos, muestra la sección completa.
+        Si el archivo 404 o está vacío, desaparece el título e icono.
+      */}
+      {JOBS && JOBS.length > 0 && (
+        <SectionContainer id="experiencia">
+          <h2
+            class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+          >
+            <Briefcase class="size-8" />
+            {t('exp.title')}
+          </h2>
+          <Experience />
+        </SectionContainer>
+      )}
 
       <SectionContainer id="proyectos">
         <h2
@@ -62,6 +67,6 @@ const EXP: ExperienceType[] = t('exp');
         </h2>
         <AboutMe />
       </SectionContainer>
-  </div>
+    </div>
   </main>
 </Layout>

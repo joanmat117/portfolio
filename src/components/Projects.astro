@@ -15,139 +15,99 @@ import Nextjs from "./icons/Nextjs.astro"
 import React from "./icons/React.astro"
 import Supabase from "./icons/Supabase.astro"
 import Redux from "./icons/Redux.astro"
-import type { ProjectType, TagType, TagsType } from '@/types'
 
-import { getLangFromUrl, useTranslations } from "@/i18n/utils"
-
-type tLang = (str: any) => any;
+// Importamos todo desde el archivo del servicio
+import { portfolioService, type Project } from "../services/PortfolioService.ts"
+import type { TagType, TagsType } from '@/types'
+import { getLangFromUrl } from "@/i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
-const t:tLang = useTranslations(lang);
+
+// Llamada SSR al servicio
+const PROJECTS: Project[] = await portfolioService.getExperience(lang as 'es' | 'en');
 
 const TAGS: TagsType = {
-  javascript: {
-    name: 'JavaScript',
-    class: 'bg-[#f7df1e] text-black',
-    icon: JavaScript,
-  },
-  tailwindcss: {
-    name: 'Tailwind CSS',
-    class: 'border border-[#38BDF8] bg-white text-black dark:border-0',
-    icon: Tailwind,
-  },
-  astro: {
-    name: 'Astro',
-    class: 'bg-white text-[#000]',
-    icon: AstroIcon,
-  },
-  typescript: {
-    name: 'TypeScript',
-    class: 'border border-[#007acc] bg-white text-[#007acc] dark:text-[#007acc] dark:border-0',
-    icon: TypeScriptIcon,
-  },
-  netlify: {
-    name: 'Netlify',
-    class: 'bg-[#2E51ED] text-white',
-    icon: Netlify,
-  },
-  vuejs: {
-    name: 'Vue',
-    class: 'bg-[#4fc08d] text-white',
-    icon: Vue,
-  },
-  sass: {
-    name: 'Sass',
-    class: 'bg-[#c69] text-white',
-    icon: Sass,
-  },
-  bootstrap: {
-    name: 'Bootstrap',
-    class: 'bg-[#7431FA] text-white',
-    icon: Bootstrap,
-  },
-  firebase: {
-    name: 'Firebase',
-    class: 'bg-[#1A73E8] text-white',
-    icon: Firebase,
-    },
-  nextjs: {
-  name: 'Nextjs',
-  class: 'bg-[#000] text-white',
-  icon: Nextjs
-  },
-  react: {
-    name:"React",
-    class: 'bg-[#0070e7] text-white',
-    icon: React
-    },
-    supabase: {
-    name:"Supabase",
-    class: 'bg-[#00c211] text-black',
-    icon:Supabase
-    },
-    redux:{
-    name:"Redux",
-    class: 'bg-[#e601ed] text-white',
-    icon:Redux,
-    }
+  javascript: { name: 'JavaScript', class: 'bg-[#f7df1e] text-black', icon: JavaScript },
+  tailwindcss: { name: 'Tailwind CSS', class: 'border border-[#38BDF8] bg-white text-black dark:border-0', icon: Tailwind },
+  astro: { name: 'Astro', class: 'bg-white text-[#000]', icon: AstroIcon },
+  typescript: { name: 'TypeScript', class: 'border border-[#007acc] bg-white text-[#007acc]', icon: TypeScriptIcon },
+  netlify: { name: 'Netlify', class: 'bg-[#2E51ED] text-white', icon: Netlify },
+  vuejs: { name: 'Vue', class: 'bg-[#4fc08d] text-white', icon: Vue },
+  sass: { name: 'Sass', class: 'bg-[#c69] text-white', icon: Sass },
+  bootstrap: { name: 'Bootstrap', class: 'bg-[#7431FA] text-white', icon: Bootstrap },
+  firebase: { name: 'Firebase', class: 'bg-[#1A73E8] text-white', icon: Firebase },
+  nextjs: { name: 'Nextjs', class: 'bg-[#000] text-white', icon: Nextjs },
+  react: { name: "React", class: 'bg-[#0070e7] text-white', icon: React },
+  supabase: { name: "Supabase", class: 'bg-[#00c211] text-black', icon: Supabase },
+  redux: { name: "Redux", class: 'bg-[#e601ed] text-white', icon: Redux },
+  materialui: { name: "Material UI", class: 'bg-[#007fff] text-white', icon: React },
 };
-
-const PROJECTS: ProjectType[] = t('projects');
 ---
 
-<div class="flex flex-col gap-y-16  p-4 ">
+<div class="flex flex-col gap-y-16 p-4">
   {
-    PROJECTS.map(({ image, imageAlt, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full aspect-square overflow-hidden md:w-1/2">
-    <div class="relative size-full flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip ">
-      <img alt={imageAlt} class="object-contain object-top w-full h-full transition duration-500 md:group-hover:scale-95" loading="lazy" src={image} />
-    </div>
-  </div>
+    PROJECTS.map(({ image, name, description, technologies, links}) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full aspect-square overflow-hidden md:w-1/2">
+          <div class="relative size-full flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip">
+            <img 
+              alt={`Imagen del proyecto ${name}`} 
+              class="object-contain object-top w-full h-full transition duration-500 md:group-hover:scale-95" 
+              loading="lazy" 
+              src={image} 
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-wrap mb-2 gap-x-2">
-                {tags.map((item) => {
-                  const tag:TagType = TAGS[item.toLowerCase()];
-                    return (
-                      <li>
-                        <span
-                          class={`flex items-center gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || ''} py-1 px-2 `}
-                        >
-              {tag && <tag.icon class="size-4" />}
-              {tag?.name || item[0].toUpperCase() + item.slice(1)}
-                        </span>
-                      </li>
-                    )
-                })}
-              </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {name}
+          </h3>
+          
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2">
+              {technologies.map((techName) => {
+                const tagKey = techName.toLowerCase().replace(/\s/g, '');
+                const tag: TagType = TAGS[tagKey];
+                return (
+                  <li>
+                    <span class={`flex items-center gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || 'bg-gray-100 dark:bg-gray-800 text-current'} py-1 px-2`}>
+                      {tag && <tag.icon class="size-4" />}
+                      {tag?.name || techName}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
+            <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
+              <p class="mb-4">{description}</p>
               
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Demo
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+              {/* Opcional: Mostrar los bullet points de advancedDescription */}
+{/*
+              <ul class="text-sm list-disc list-inside space-y-1 opacity-80">
+                {advancedDescription.map(item => <li>{item}</li>)}
+              </ul>
+*/}
+            </div>
+
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {links.code && (
+                <LinkButton href={links.code}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {links.demo && (
+                <LinkButton href={links.demo}>
+                  <Link class="size-4" />
+                  Demo
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-

@@ -1,22 +1,32 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import { getLangFromUrl, useTranslations } from "@/i18n/utils"
-import type { Experience } from '@/types'
-
-type tLang = (str: any) => any;
+// Importamos el servicio y el nuevo tipo JobExperience
+import { portfolioService, type JobExperience } from "@/services/PortfolioService"
+import { getLangFromUrl } from "@/i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
-const t:tLang = useTranslations(lang);
 
-const EXP: Experience[] = t('exp');
+// SSR: Obtenemos la experiencia laboral real desde el nuevo método
+const jobs: JobExperience[] = await portfolioService.getJobExperience(lang as 'es' | 'en');
+
+// Mapeamos los trabajos al formato que espera tu ExperienceItem
+const EXP = jobs?.map((job) => ({
+  title: job.role,
+  company: job.company,
+  date: `${job.date.start} - ${job.date.end}`,
+  description: job.description,
+  link: job.link || "#",
+})) || [];
 ---
 
-<ol class="relative mt-11  p-4 ">
-  {
-    EXP.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
-</ol>
+{
+  EXP.length > 0 && (
+    <ol class="relative mt-11 p-4">
+      {EXP.map((experience) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      ))}
+    </ol>
+  )
+}

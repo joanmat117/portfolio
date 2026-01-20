@@ -1,19 +1,32 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/i18n/utils"
-
-type tLang = (str: any) => any;
+import { portfolioService, type PersonalInfo } from "../services/PortfolioService"
+import { getLangFromUrl } from "@/i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
-const t:tLang = useTranslations(lang);
+
+// SSR: Obtenemos la información personal desde el servicio
+const personalInfo: PersonalInfo = await portfolioService.getPersonalInfo(lang as 'es' | 'en');
+
+// Transformamos el array de frases en párrafos HTML
+// Nota: Puedes rodear palabras clave con <strong> directamente en tu JSON si quieres resaltar algo
+const bioHtml = personalInfo.largeAboutMe
+  .map(paragraph => `<p>${paragraph}</p>`)
+  .join("");
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row p-4 ">
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row p-4">
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-[#42b883] dark:[&>p>strong]:text-[#42b883] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-    set:html={t('about.bio')}
+    set:html={bioHtml}
   >
   </div>
 
-  <img width="200" height="200" src="https://github.com/joanmat117.png" alt={t('personalImageAlt')} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
+  <img 
+    width="200" 
+    height="200" 
+    src={personalInfo.image} 
+    alt={`Foto de perfil de ${personalInfo.name}`} 
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20" 
+    style="object-position: 50% 50%"
+  >
 </article>
