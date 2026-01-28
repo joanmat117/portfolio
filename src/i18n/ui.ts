@@ -5,6 +5,9 @@ export const languages = {
 
 export const defaultLang = 'es';
 
+export const avaliableTypes = ['t','m']
+
+
 export const ui = {
     es: {
         'layout.title': 'Desarrollador Frontend',
