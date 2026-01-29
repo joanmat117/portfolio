@@ -21,11 +21,10 @@ const t = useTranslations(lang);
 
 // SSR: Obtenemos los datos personales
 const personalInfo: PersonalInfo|null = await portfolioService.getPersonalInfo(lang as 'es' | 'en');
-const { social, image, name, shortAboutMe,marketingAboutMe } = personalInfo || {};
+const { social, image, name, shortAboutMe} = personalInfo || {};
 
-console.log(marketingAboutMe)
 
-const bioShort = portfolioType === 't' ? shortAboutMe?.join(" ") : marketingAboutMe?.join('<br/><br/>');
+const bioShort = shortAboutMe?.join(" ") 
 ---
 
 <div class="max-w-xl p-4">
