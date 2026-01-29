@@ -1,33 +1,27 @@
+---
+
+interface Props {
+label:string,
+}
+
+const {label,...rest} = Astro.props
+---
+
 <a
-  {...Astro.props}
+  {...rest}
   target="_blank"
   rel="noopener noreferrer"
   role="link"
   class="
-    inline-flex
-    items-center
-    justify-center
-    gap-2 px-4 py-1
-    text-gray-800
-    transition
-    border
-    border-[#42b883]
-    rounded-full
-    focus-visible:ring-yellow-500/80
-    text-md
-    group
-    max-w-fit
-    focus:outline-none
-    focus-visible:outline-none
-    focus-visible:ring
-    focus-visible:ring-white
-    focus-visible:ring-offset-2
-    active:bg-black
-    hover:text-white
-    hover:bg-gradient-to-r from-[#42b883] to-[#0ebbd2]
-    dark:bg-[#0b0e1e]
-    dark:text-white
+    flex flex-col gap-3 text-foreground transition-all cursor-pointer hover:scale-110 items-center justify-center
     "
 >
-  <slot />
+<div class="
+  rounded-full text-xl  size-fit bg-primary p-2 grid place-content-center
+  ">
+  <slot/>
+</div>
+<span
+class='text-xs text-center'
+  >{label}</span>
 </a>

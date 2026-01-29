@@ -8,18 +8,16 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
-
-// Importamos el servicio
-import { portfolioService } from "@/services/PortfolioService"
-import { getLangFromUrl, useTranslations } from "@/i18n/utils"
-import {avaliableTypes} from '@/i18n/ui'
+import { portfolioService } from "@/services/PortfolioService";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import {avaliableTypes} from '@/i18n/ui';
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang);
 
-//const {type} = Astro.params
+const {type} = Astro.params;
 
-//const portfolioType = type in avaliableTypes ? return type : avaliableTypes[0] 
+const portfolioType = (avaliableTypes.includes(type) ? type : avaliableTypes[0] )
 
 // SSR: Obtenemos la experiencia laboral (Job Experience)
 // Si el archivo no existe o está vacío, el servicio devuelve []
@@ -33,7 +31,7 @@ const JOBS = await portfolioService.getJobExperience(lang as 'es' | 'en');
   <main class="flex justify-center gap-10 px-4 md:px-10 flex-col w-full h-full">
     <div class="first-column relative h-full ">
       <SectionContainer class="py-16">
-        <Hero portfolioType />
+      <Hero portfolioType={portfolioType} />
       </SectionContainer>
     </div>
 

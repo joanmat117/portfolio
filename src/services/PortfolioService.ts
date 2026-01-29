@@ -81,6 +81,7 @@ export interface PersonalInfo {
   professionalAboutMe: string;
   largeAboutMe: string[];
   shortAboutMe: string[];
+  marketingAboutMe:string[];
   technologies: Technologies;
   certifications: Certifications;
   social: SocialLinks;
