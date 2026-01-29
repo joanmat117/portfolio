@@ -12,12 +12,9 @@ import { portfolioService } from "@/services/PortfolioService";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import {avaliableTypes} from '@/i18n/ui';
 
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang);
-
-const {type} = Astro.params;
-
-const portfolioType = (avaliableTypes.includes(type) ? type : avaliableTypes[0] )
 
 // SSR: Obtenemos la experiencia laboral (Job Experience)
 // Si el archivo no existe o está vacío, el servicio devuelve []
@@ -31,7 +28,7 @@ const JOBS = await portfolioService.getJobExperience(lang as 'es' | 'en');
   <main class="flex justify-center gap-10 px-4 md:px-10 flex-col w-full h-full">
     <div class="first-column relative h-full ">
       <SectionContainer class="py-16">
-      <Hero portfolioType={portfolioType} />
+        <Hero />
       </SectionContainer>
     </div>
 
