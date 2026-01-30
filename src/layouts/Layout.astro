@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
 import type { Props } from '@/types'
 
-const { description, title } = Astro.props as Props
+const { description } = Astro.props as Props
 
 const { currentLocale } = Astro
 ---
@@ -19,8 +19,26 @@ const { currentLocale } = Astro
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Joan Matias - Desarrollador Web</title>
     <ViewTransitions />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Joan Matias - Desarrollador Web" />
+<meta property="og:description" content="Sitio web personal de Joan Matías. Aquí puedes encontrar información sobre mi experiencia, proyectos y detalles de contacto" />
+<meta property="og:url" content="https://joanmat-portfolio.vercel.app" />
+
+<meta property="og:image" content="https://i.postimg.cc/rwkDJjb8/front.webp" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="599" />
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Joan Matias - Desarrollador Web" />
+<meta name="twitter:description" content="Sitio web personal de Joan Matías. Aquí puedes encontrar información sobre mi experiencia, proyectos y detalles de contacto" />
+<meta name="twitter:image" content="https://i.postimg.cc/rwkDJjb8/front.webp" />
+<meta name="twitter:image:width" content="1024" />
+<meta name="twitter:image:height" content="599" />
   </head>
 
   <body class="relative text-black dark:text-white">
