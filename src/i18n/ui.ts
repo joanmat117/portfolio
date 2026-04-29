@@ -15,13 +15,15 @@ export const ui = {
         'nav.about': 'Sobre mí',
         'nav.contact': 'Contacto',
         'hero.badge': 'Disponible para trabajar',
-        'hero.title': 'Diseño software de calidad, bajo control, y sin deuda técnica',
+        'hero.title': 'Diseño software de calidad, limpio, y sin deuda técnica',
         'hero.bio': '+1.5 años de experiencia aportando a la web. <strong>Desarrollador Frontend</strong> 🇨🇺 especializado en crear experiencias que no solo funcionen, sino que <strong>se sientan increíbles.</strong>',
         'hero.mail': 'Contáctame',
         'hero.linkedin': 'LinkedIn',
         'exp.title': 'Experiencia',
         'projects.title': 'Proyectos Destacados',
         'about.title': 'Sobre mí',
+        'stats.repositories':'Repositorios',
+        'stats.contributionsInPrivatedRepositories':"Contribuciones en repositorios privados",
         'about.bio': `<p>Mi primer "Hola mundo" fue el LED de un Arduino parpadeando. Ahí aprendí que lo importante no es solo que algo funcione, sino que sea útil y fácil de usar para los demás.</p><p>Creo, como Steve Jobs, que "el diseño no es solo cómo se ve, sino cómo funciona". Por eso, me apasiona construir interfaces donde la tecnología se note en los resultados: en lo rápido que carga, en lo fácil que es navegar y en lo simple que es entenderlo.</p><p>Mi objetivo es que la persona al otro lado de la pantalla no tenga que pensar en cómo usarlo, sino solo en disfrutar de lo que hace.</p>
         `,
         'footer.rights': 'Todos los derechos reservados',
@@ -89,14 +91,15 @@ export const ui = {
         'nav.about': 'About me',
         'nav.contact': 'Contact',
         'hero.badge': 'Open to work',
-        'hero.title': 'Designing quality software, under control, and free of technical debt',
+        'hero.title': 'Designing quality software, clean, and free of technical debt',
         'hero.bio': '+1.5 years of experience contributing to the web. <strong>Frontend Developer</strong> 🇨🇺 specialized in creating experiences that not only work but <strong>feel incredible.</strong>',
         'hero.mail': 'Contact me',
         'hero.linkedin': 'LinkedIn',
         'exp.title': 'Experience',
         'projects.title': 'Featured Projects',
         'about.title': 'About me',
-        'about.bio': `<p>My first "Hello world" was an Arduino LED blinking. That's where I learned that what matters is not just that something works, but that it is useful and easy for others to use.</p>
+'stats.repositories':'Repositories',
+        'stats.contributionsInPrivatedRepositories':"Contributions in private repositories",        'about.bio': `<p>My first "Hello world" was an Arduino LED blinking. That's where I learned that what matters is not just that something works, but that it is useful and easy for others to use.</p>
 
 <p>I believe, like Steve Jobs, that "design is not just what it looks like, it's how it works." That’s why I’m passionate about building interfaces where technology is noticeable in the results: in how fast it loads, how easy it is to navigate, and how simple it is to understand.</p>
 

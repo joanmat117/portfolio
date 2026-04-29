@@ -11,6 +11,7 @@ import Hero from "@/components/Hero.astro"
 import { portfolioService } from "@/services/PortfolioService";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import {avaliableTypes} from '@/i18n/ui';
+import GithubStats from "../components/GithubStats.astro"
 
 
 const lang = getLangFromUrl(Astro.url)
@@ -48,6 +49,7 @@ const JOBS = await portfolioService.getJobExperience(lang as 'es' | 'en');
         </SectionContainer>
       )}
 
+
       <SectionContainer id="proyectos">
         <h2
           class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -57,6 +59,16 @@ const JOBS = await portfolioService.getJobExperience(lang as 'es' | 'en');
         </h2>
         <Projects />
       </SectionContainer>
+
+      <SectionContainer id="stats">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          Github Stats ({new Date().getFullYear()})
+        </h2>
+    <GithubStats  />
+      </SectionContainer>
+      
 
       <SectionContainer id="sobre-mi">
         <h2

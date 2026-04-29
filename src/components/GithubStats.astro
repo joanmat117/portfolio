@@ -1,0 +1,59 @@
+---
+import { getGitHubStats } from '../lib/github-stats';
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
+
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang);
+
+
+export interface Props {
+  username?: string;
+  showDetails?: boolean;
+}
+
+const { username = "joanmat117", showDetails = true } = Astro.props;
+
+// En SSR, esto se ejecuta en cada request (pero con caché interna)
+const token = import.meta.env.GITHUB_TOKEN;
+const stats = await getGitHubStats(username, token);
+
+const statsWithLabel = [
+  {
+    label:"Commits",
+    info:stats.totalCommits.toLocaleString()
+  },{
+    label:"Pull requests",
+    info:stats.totalPullRequests.toLocaleString()
+  },{
+    label:t("stats.repositories"),
+    info:stats.totalRepositories
+  }
+]
+---
+
+<div class="github-stats">
+  {stats.error ? (
+    <div class="text-red-500 text-sm">⚠️ Error cargando estadísticas: {stats.error}</div>
+  ) : (
+    <>
+      <div class="flex items-center justify-center gap-4">
+      {statsWithLabel.map(stat=>(
+        
+     <div class="flex-1 border border-slate-500/20 dark:border-slate-200/20 p-4 rounded-none text-center">
+          <div class="text-3xl font-bold ">
+            {stat.info}
+          </div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+        </div>
+      ))}
+      </div>
+      
+      {showDetails && stats.hasRestrictedContributions && (
+        <div class="text-sm text-slate-800 dark:text-slate-200 border border-slate-500/20 dark:border-slate-200/20 p-2 text-center mt-3">
+          +{stats.restrictedCount} {t("stats.contributionsInPrivatedRepositories")}
+        </div>
+      )}
+    </>
+  )}
+</div>
