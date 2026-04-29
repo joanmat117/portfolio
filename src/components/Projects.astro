@@ -47,31 +47,30 @@ const TAGS: TagsType = {
 <div class="flex flex-col gap-y-16 p-4">
   {
     PROJECTS.map(({ image, name, description, technologies, links}) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full aspect-square overflow-hidden md:w-1/2">
-          <div class="relative size-full flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip">
+      <article class="flex flex-col space-x-0 group md:flex-row border border-slate-500/20 dark:border-slate-200/20 ">
+        <div class="w-full aspect-video overflow-hidden md:w-1/2">
+          <div class="relative size-full p-3 flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip">
             <img 
               alt={`Imagen del proyecto ${name}`} 
-              class="object-contain object-top w-full h-full transition duration-500 md:group-hover:scale-95" 
+              class="object-contain border border-dashed border-slate-500/20 dark:border-slate-200/20 object-top w-full h-full transition duration-500 " 
               loading="lazy" 
               src={image} 
             />
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+        <div class="w-full flex gap-3 flex-col md:w-1/2 border border-blue-500 md:max-w-lg p-2">
+          <h3 class="text-2xl font-bold mt-2 text-gray-800 dark:text-gray-100">
             {name}
           </h3>
           
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-wrap mb-2 gap-x-2">
+            <ul class="flex flex-wrap gap-x-2">
               {technologies.map((techName) => {
                 const tagKey = techName.toLowerCase().replace(/\s/g, '');
                 const tag: TagType = TAGS[tagKey];
                 return (
                   <li>
-                    <span class={`flex items-center gap-x-2 mt-2 rounded-full border text-xs ${tag?.class || 'bg-gray-100 dark:bg-gray-800 text-current'} py-1 px-2`}>
+                    <span class={`flex items-center italic font-light gap-x-2 mt-2 rounded-none border border-slate-500/20 dark:border-slate-200/10 text-xs  p-1 px-1.5`}>
                       {tag && <tag.icon class="size-4" />}
                       {tag?.name || techName}
                     </span>
@@ -80,8 +79,8 @@ const TAGS: TagsType = {
               })}
             </ul>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
-              <p class="mb-4">{description}</p>
+            <div class=" flex-1 text-gray-700 dark:text-gray-400 text-pretty">
+              <p class=" text-sm">{description}</p>
               
               {/* Opcional: Mostrar los bullet points de advancedDescription */}
 {/*
@@ -91,10 +90,10 @@ const TAGS: TagsType = {
 */}
             </div>
 
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
+            <footer class="flex items-end w-full justify-start gap-x-2">
               {links.code && (
                 <LinkButton href={links.code}>
-                  <GitHub class="size-6" />
+                  <GitHub class="size-4" />
                   Code
                 </LinkButton>
               )}
@@ -105,7 +104,6 @@ const TAGS: TagsType = {
                 </LinkButton>
               )}
             </footer>
-          </div>
         </div>
       </article>
     ))

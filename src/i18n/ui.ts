@@ -15,7 +15,7 @@ export const ui = {
         'nav.about': 'Sobre mí',
         'nav.contact': 'Contacto',
         'hero.badge': 'Disponible para trabajar',
-        'hero.title': 'Hola, soy Joan',
+        'hero.title': 'Diseño software de calidad, bajo control, y sin deuda técnica',
         'hero.bio': '+1.5 años de experiencia aportando a la web. <strong>Desarrollador Frontend</strong> 🇨🇺 especializado en crear experiencias que no solo funcionen, sino que <strong>se sientan increíbles.</strong>',
         'hero.mail': 'Contáctame',
         'hero.linkedin': 'LinkedIn',
@@ -36,14 +36,14 @@ export const ui = {
         ],*/
         projects: [
             {
-              "title": "Torneo EA FC 24 Madrid",
-              "description": "Landing page moderna para un torneo de gaming, desarrollada con Astro para máximo rendimiento y diseño responsivo. Internacionalización completa en tres idiomas .",
-              "link": "https://torneoeafc24madrid.vercel.app/es",
-              "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
-              "image": "/torneo-ea-fc-24-landing.webp",
-              "imageAlt": "Captura de pantalla del sitio web del Torneo EA FC 24 Madrid",
-              "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
-            }, 
+                "title": "Torneo EA FC 24 Madrid",
+                "description": "Landing page moderna para un torneo de gaming, desarrollada con Astro para máximo rendimiento y diseño responsivo. Internacionalización completa en tres idiomas .",
+                "link": "https://torneoeafc24madrid.vercel.app/es",
+                "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
+                "image": "/torneo-ea-fc-24-landing.webp",
+                "imageAlt": "Captura de pantalla del sitio web del Torneo EA FC 24 Madrid",
+                "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
+            },
             {
                 title: 'Energía Ideal',
                 description: 'Un sitio web de noticias de alto rendimiento con diseño elegante, SEO perfecto y estructura multilingüe para alcance global.',
@@ -89,7 +89,7 @@ export const ui = {
         'nav.about': 'About me',
         'nav.contact': 'Contact',
         'hero.badge': 'Open to work',
-        'hero.title': 'Hello, I\'m Joan',
+        'hero.title': 'Designing quality software, under control, and free of technical debt',
         'hero.bio': '+1.5 years of experience contributing to the web. <strong>Frontend Developer</strong> 🇨🇺 specialized in creating experiences that not only work but <strong>feel incredible.</strong>',
         'hero.mail': 'Contact me',
         'hero.linkedin': 'LinkedIn',
@@ -113,13 +113,13 @@ export const ui = {
         ],*/
         projects: [
             {
-            "title": "EA FC 24 Madrid Tournament",
-            "description": "Modern landing page for a gaming tournament, developed with Astro for maximum performance and responsive design. Complete internationalization in three languages.",
-            "link": "https://torneoeafc24madrid.vercel.app/es",
-            "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
-            "image": "/torneo-ea-fc-24-landing.webp",
-            "imageAlt": "Screenshot of the EA FC 24 Madrid Tournament website",
-            "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
+                "title": "EA FC 24 Madrid Tournament",
+                "description": "Modern landing page for a gaming tournament, developed with Astro for maximum performance and responsive design. Complete internationalization in three languages.",
+                "link": "https://torneoeafc24madrid.vercel.app/es",
+                "github": "https://github.com/joanmat117/torneo-ea-fc-tournament-landing-page",
+                "image": "/torneo-ea-fc-24-landing.webp",
+                "imageAlt": "Screenshot of the EA FC 24 Madrid Tournament website",
+                "tags": ["astro", "typescript", "react", "tailwindcss", "i18n"]
             },
             {
                 title: 'Ideal Energy',

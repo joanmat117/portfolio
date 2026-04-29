@@ -1,20 +1,19 @@
 ---
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import MailIcon from "../components/icons/Mail.astro"
 import GitHubIcon from "./icons/GitHub.astro"
-import SocialPill from "@/components/SocialPill.astro"
+import SocialPill from "../components/SocialPill.astro"
 import Curriculum from "./icons/Curriculum.astro"
 
-import { portfolioService, type PersonalInfo } from "@/services/PortfolioService"
-import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import { portfolioService, type PersonalInfo } from "../services/PortfolioService"
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 
 interface Props {
   portfolioType: "t"|'m'
 }
 
 const {portfolioType} = Astro.props
-console.log('pType de hero: ',portfolioType)
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang);
@@ -28,24 +27,18 @@ const bioShort = shortAboutMe?.join(" ")
 ---
 
 <div class="max-w-xl p-4">
+  <p class=" text-lg text-slate-900 opacity-80 dark:text-slate-100 ">{name}</p>
   <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16 object-cover"
-      src={image}
-      alt={name}
-    />
-    <a
-      href={social?.linkedin || '#'}
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center"
-    >
-      <Badge>{t('hero.badge')}</Badge>
-    </a>
+    <!-- <img -->
+    <!--   class="rounded-none border border-3 border-slate-300/40 shadow-lg size-16 object-cover" -->
+    <!--   src={image} -->
+    <!--   alt={name} -->
+    <!-- /> -->
+    
   </div>
 
   <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white text-balance"
+    class="text-4xl font-[Exo] leading-xl text-gray-800 sm:text-5xl py-3 dark:text-white text-balance"
   >
     {t('hero.title')}
   </h1>
@@ -53,47 +46,52 @@ const bioShort = shortAboutMe?.join(" ")
   {bioShort && <p
     set:html={bioShort}
     class="
-      mt-6
-      text-xl
+      my-6
+      text-md
       text-gray-800
       dark:text-gray-300
       
-      [&>strong]:text-[#42b883] 
+      [&>strong]:text-blue-500 
       [&>strong]:font-semibold 
       [&>strong]:underline 
-      [&>strong]:decoration-2 
+      [&>strong]:decoration-1 
       [&>strong]:underline-offset-4
-      [&>strong]:decoration-[#42b883]/40
-      dark:[&>strong]:text-[#42b883]
+      [&>strong]:decoration-blue-500/40
+      dark:[&>strong]:text-blue-500
     "
   >
   </p>}
 
-  {social?.email && <a href={`mailto:${social.email}`} class="w-full mt-4 flex justify-center gap-2 py-2 px-4 rounded-full text-sm border transition-all items-center border-[#42b883] hover:bg-[#42b883] hover:text-white text-gray-800 dark:text-gray-100">
+
+  {social?.email &&<div> 
+  <a href={`mailto:${social.email}`} class="w-full mt-4 flex justify-center gap-2 py-2 px-4 rounded-none text-sm border transition-all items-center border-slate-500/20 hover:border-slate-800 dark:border-slate-200/20 dark:hover:border-slate-200/80 text-gray-800 dark:text-gray-100">
     <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7.175q.125 0 .263-.038t.262-.112L19.6 8.25q.2-.125.3-.312t.1-.413q0-.5-.425-.75T18.7 6.8L12 11L5.3 6.8q-.45-.275-.875-.012T4 7.525q0 .25.1.438t.3.287l7.075 4.425q.125.075.263.113t.262.037"/></svg>
-    {t('hero.mail')}
+    <span class="select-all">{social.email}</span>
     </a>
+      {/*<p class="text-center text-xs text-slate-700 dark:text-slate-300 mt-1 select-all">{social.email}</p>*/}
+    </div>
     }
 
-  <nav class="flex flex-wrap justify-center gap-4 mt-8">
-    <SocialPill href={'https://devthink.vercel.app'} label="Blog">
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill class="flex-1" href={'https://devthink.vercel.app'} label="Blog">
     <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm2-4h7v-2H7zm0-4h10v-2H7zm0-4h10V7H7z"/></svg>
     </SocialPill>
     
 
-    {social?.linkedin && <SocialPill href={social.linkedin} label='LinkedIn'>
+    {social?.linkedin && <SocialPill class="flex-1" href={social.linkedin} label='LinkedIn'>
       <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 128 128"><path fill="#0076b2" d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3"/><path fill="#fff" d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 1 1-10.5 10.49a10.5 10.5 0 0 1 10.5-10.49m20.41 29h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"/></svg>
     </SocialPill>}
 
-    {social?.github && <SocialPill href={social.github} label='Github'>
+    {social?.github && <SocialPill class="flex-1" href={social.github} label='Github'>
       <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24"><path fill="currentColor" d="M12.001 2c-5.525 0-10 4.475-10 10a9.99 9.99 0 0 0 6.837 9.488c.5.087.688-.213.688-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.337 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.687c-.1-.25-.45-1.275.1-2.65c0 0 .837-.263 2.75 1.024a9.3 9.3 0 0 1 2.5-.337c.85 0 1.7.112 2.5.337c1.913-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.02 10.02 0 0 0 22 12c0-5.525-4.475-10-10-10"/></svg>    </SocialPill>}
 
-      {/*<SocialPill 
+      <SocialPill 
       download={`CV_Joan_Matias_${lang.toUpperCase()}`} 
       href={`/joan_cv_${lang || 'es'}.pdf`}
-      label={'CV'}
+      label={'Curriculum'}
+      class="flex-1"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm98.88 133.234c19.636 0 37.082 6.789 49.929 16.971c11.88 9.452 17.444 18.907 22.298 27.393l-33.923 16.949c-2.427-5.565-5.347-11.387-12.846-17.682c-8.248-6.552-16.478-8.484-23.524-8.484c-27.626 0-42.17 25.693-42.17 54.287c0 37.573 19.161 56.22 42.17 56.22c22.3 0 31.278-15.51 37.08-25.435L219.6 302.66c-6.315 9.926-12.374 19.635-25.95 29.069c-7.262 5.09-23.977 15.037-47.736 15.037C100.586 346.766 64 313.81 64 255.87c0-50.636 34.415-90.637 82.88-90.637m75.483 5.328h45.565L303.31 292.24l35.125-121.678H384l-59.379 171.112H281.01z"/></svg>
-      </SocialPill>*/}
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-8 4v-5h2v3h12v-3h2v5z"/></svg>
+      </SocialPill>
   </nav>
 </div>

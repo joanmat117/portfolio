@@ -1,10 +1,12 @@
 ---
+import { HTMLAttributes } from 'astro/types'
 
-interface Props {
+
+interface Props extends HTMLAttributes<"a"> {
 label:string,
 }
 
-const {label,...rest} = Astro.props
+const {label,class,...rest} = Astro.props
 ---
 
 <a
@@ -12,16 +14,16 @@ const {label,...rest} = Astro.props
   target="_blank"
   rel="noopener noreferrer"
   role="link"
-  class="
-    flex flex-col gap-3 text-foreground transition-all cursor-pointer hover:scale-110 items-center justify-center
-    "
+  class={`
+  flex flex-1 flex-col border border-dashed border-slate-500/20 hover:border-slate-800 dark:border-slate-200/20 dark:hover:border-slate-200/80  text-foreground transition-all cursor-pointer  items-center justify-center
+    `}
 >
 <div class="
-  rounded-full text-xl  size-fit bg-primary p-2 grid place-content-center
+    text-xl  w-full bg-primary p-2 grid place-content-center
   ">
   <slot/>
 </div>
 <span
-class='text-xs text-center'
+class='text-xs p-1 font-semibold text-center'
   >{label}</span>
 </a>

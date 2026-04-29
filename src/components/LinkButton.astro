@@ -12,25 +12,20 @@ const { href } = Astro.props as Props
   inline-flex
   items-center
   justify-center
+  flex-1
   gap-2 px-4 py-1
   text-gray-800
   transition
   border
-  border-[#42b883]
-  rounded-full
-  focus-visible:ring-yellow-500/80
-  text-md
+  border-slate-500/20
+  dark:border-slate-400/20
+  text-sm
   group
-  max-w-fit
+  w-fit
   focus:outline-none
-  focus-visible:outline-none
-  focus-visible:ring
-  focus-visible:ring-white
-  focus-visible:ring-offset-2
-  active:bg-black
-  hover:text-white
-  hover:bg-gradient-to-r from-[#42b883] to-[#0ebbd2]
-  dark:bg-[#0b0e1e]
+  hover:border-slate-800
+  dark:hover:border-slate-200/80
+  bg-transparent
   dark:text-white"
 >
   <slot />
